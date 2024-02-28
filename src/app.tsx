@@ -1,33 +1,22 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import './app.css';
+import Form from './components/Forms.tsx'; // import form component 
+import Vote from './components/Vote.tsx'; // import vote component 
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+    {/* header for app */}
+      <header className="Header"> 
+        <h1> Lina&#39;s Commenting Platform </h1>   
+      </header> 
+
+    {/* handle form submit */}
+    <Form /> 
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <Vote /> 
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+  
     </>
   );
 }
