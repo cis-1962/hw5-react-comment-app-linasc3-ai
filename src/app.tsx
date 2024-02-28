@@ -1,6 +1,6 @@
 import './app.css';
 import Form from './components/Forms.tsx'; // import form component 
-import Vote from './components/Vote.tsx'; // import vote component 
+
 
 function App() {
 
@@ -13,9 +13,6 @@ function App() {
 
     {/* handle form submit */}
     <Form /> 
-      <div className="card">
-      <Vote /> 
-      </div>
   
     </>
   );
