@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Forms from './Forms.tsx';
+import Vote from './Vote.tsx'; // import vote component 
 
 // define interface for type checking 
 interface RecursiveReplyProps {
@@ -9,6 +10,13 @@ interface RecursiveReplyProps {
     };
     level: number;
   }
+
+  // for visual clarity, set background color of div to different shade based on level 
+  const getBackgroundColor = (level) => {
+    const colors = ['#ffebee', '#ffcdd2', '#ef9a9a', '#e57373'];
+    // Return the color based on the level 
+    return colors[level % colors.length];
+  };
 
   export const RecursiveReply: React.FC<RecursiveReplyProps> = ({ content, level }) => {
   const [replies, setReplies] = useState([]); // use an array to store the props 
@@ -41,16 +49,17 @@ interface RecursiveReplyProps {
     // if the level is less than 3 and we're able to add a reply using form info, 
     // print the current reply and render it 
     return (
-      <div style={{ marginLeft: `${level * 20}px`, marginTop: '10px' , marginBottom: '10px'}}>
+      <div style={{ marginLeft: `${level * 40}px`, marginTop: '10px' , marginBottom: '10px'}}>
         {/* Render the name and description from content prop */}
-        <div>
+        <div style={{ backgroundColor: getBackgroundColor(level), padding: '10px', marginBottom: "10px", borderRadius: "10px"}}>
           <h3>{content.name}</h3>
-          <p>{content.description}</p>
-        </div>
-  
+          <p>{content.description}</p> 
+      {level > 1 && <Vote/>} 
+      </div> 
+      
         {level < 3 && (
           <>
-            <button onClick={toggleReplyForm}>Reply</button>
+            <button style={{backgroundColor: "#F64A8A", color: "white", borderRadius: "10px", marginBottom: "10px"}} onClick={toggleReplyForm}>Reply</button>
             {showReplyForm && (
               <Forms
                 addReply={addReply}
@@ -58,10 +67,14 @@ interface RecursiveReplyProps {
               />
             )}
           </>
+          
         )}
+        
         {replies.map((reply, index) => (
-          <RecursiveReply key={index} content={{ name: reply.name, description: reply.description }} level={level + 1} />
-        ))}
+  <div className="reply" key={index}>
+    <RecursiveReply content={{ name: reply.name, description: reply.description }} level={level + 1} />
+  </div>
+))}
       </div> 
     );
   

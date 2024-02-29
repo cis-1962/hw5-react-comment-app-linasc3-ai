@@ -96,6 +96,7 @@ export default function Forms({ addReply, onSubmitSuccess}: FormsProps){
         <Button variant="primary" style={{ backgroundColor: "#FF1493" }} type="submit">
           Submit 
         </Button>
+        
       </Form>
 
        
@@ -106,7 +107,7 @@ export default function Forms({ addReply, onSubmitSuccess}: FormsProps){
       <h3>{post.name}</h3>
       <p>{post.description}</p>
       <Vote /> 
-      <RecursiveReply content={{ name: post.names, description: post.descriptions }} level={0} />
+      <RecursiveReply content={{ name: post.names, description: post.descriptions }} level={1} />
     </div>
   ))}
 </div>
