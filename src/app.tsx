@@ -8,7 +8,7 @@ function App() {
     <>
     {/* header for app */}
       <header className="Header"> 
-        <h1> Lina&#39;s Commenting Platform </h1>   
+        <h1> 💓 Lina&#39;s Commenting Platform 💓 </h1>   
       </header> 
 
     {/* handle form submit. the recursive reply component is called in form, as is vote

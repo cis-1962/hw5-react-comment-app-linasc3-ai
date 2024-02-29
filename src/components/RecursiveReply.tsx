@@ -15,6 +15,8 @@ interface RecursiveReplyProps {
   const getBackgroundColor = (level) => {
     const colors = ['#ffebee', '#ffcdd2', '#ef9a9a', '#e57373'];
     // Return the color based on the level 
+    if (level === 1) return undefined; 
+
     return colors[level % colors.length];
   };
 
