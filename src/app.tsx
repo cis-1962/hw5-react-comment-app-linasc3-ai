@@ -11,7 +11,8 @@ function App() {
         <h1> Lina&#39;s Commenting Platform </h1>   
       </header> 
 
-    {/* handle form submit */}
+    {/* handle form submit. the recursive reply component is called in form, as is vote
+    so everything should be handled here */}
     <Form /> 
   
     </>
