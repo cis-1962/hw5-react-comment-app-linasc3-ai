@@ -1,6 +1,8 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite (https://linacommentapps.netlify.app) 
+
 
 This template provides a minimal setup to get React working in Vite with Hot Module Reloading (HMR) and some ESLint rules, including the CIS-1962 ESLint rules.
+https://linacommentapps.netlify.app
 
 # Development
 
