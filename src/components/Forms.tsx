@@ -2,7 +2,7 @@ import React, { useState } from 'react'; // import react and use state hook
 import Button from 'react-bootstrap/Button'; // import a nice looking button from React Bootstrap
 import Form from 'react-bootstrap/Form'; // import boostrap form 
 import Vote from './Vote.tsx'; // import vote component 
-import { RecursiveReply } from './RecursiveReply.tsx';
+import {RecursiveReply } from './RecursiveReply.tsx';
 
 // added for typescript compatibility 
 type FormsProps = {
